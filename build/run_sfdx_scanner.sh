@@ -4,7 +4,7 @@ echo "Installing JDK"
 echo "Install SFDX Scanner"
 #echo -e 'y/n' | sfdx plugins:install @salesforce/sfdx-scanner@latest
 
-npm cache clean --force
+#npm cache clean --force
 
-##echo "Running SFDX Scanner"
+echo "Running SFDX Scanner"
 npx sfdx scanner:run --target "**/default/**" --format "csv" --outfile "sfdxScannerAnalysis.csv" --violations-cause-error
