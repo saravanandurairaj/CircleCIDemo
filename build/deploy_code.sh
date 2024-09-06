@@ -5,5 +5,4 @@ echo "Deploying code to org"
 # sfdx force:mdapi:deploy -u DevHub -d deploy_code/ -w -1 -l RunLocalTests
 
 echo "Run Specific Test Class to org"
-sfdx force:mdapi:deploy -u DevHub -d deploy_code/ -w -1 -l RunSpecifiedTests -n DemoLWCControllerTest,SampleControllerTest
-
+sfdx force:mdapi:deploy -u DevHub -d deploy_code/ -l RunSpecifiedTests -n DemoLWCControllerTest,SampleControllerTest -w 33 --verbose --loglevel fatal
