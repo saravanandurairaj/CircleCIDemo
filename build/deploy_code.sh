@@ -3,3 +3,7 @@ sfdx force:source:convert -d deploy_code -r force-app
 
 echo "Deploying code to org"
 # sfdx force:mdapi:deploy -u DevHub -d deploy_code/ -w -1 -l RunLocalTests
+
+echo "Run Specific Test Class to org"
+sfdx force:mdapi:deploy -u DevHub -d deploy_code/ -w -1 -l --testlevel RunSpecifiedTests -n DemoLWCControllerTest,SampleControllerTest
+
