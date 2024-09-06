@@ -1,1 +1,39 @@
-<template> Welcome to LWC </template>
+<template>
+    <lightning-card title="Submit Person Details" icon-name="action:new_contact">
+        <div class="slds-m-around_medium">
+            <!-- Name Input Field -->
+            <lightning-input
+                label="Name"
+                placeholder="Enter your name"
+                value={name}
+                onchange={handleNameChange}>
+            </lightning-input>
+
+            <!-- Age Input Field -->
+            <lightning-input
+                label="Age"
+                type="number"
+                placeholder="Enter your age"
+                value={age}
+                onchange={handleAgeChange}>
+            </lightning-input>
+
+            <!-- Submit Button -->
+            <lightning-button
+                label="Submit"
+                variant="brand"
+                onclick={handleSubmit}>
+            </lightning-button>
+
+            <!-- Display Success Message -->
+            <template if:true={showSuccessMessage}>
+                <p class="slds-m-top_medium slds-text-color_success">Person saved successfully!</p>
+            </template>
+
+            <!-- Display Error Message -->
+            <template if:true={showErrorMessage}>
+                <p class="slds-m-top_medium slds-text-color_error">Error: {errorMessage}</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>
