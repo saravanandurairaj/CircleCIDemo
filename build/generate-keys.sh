@@ -1,7 +1,14 @@
+##"C:\Program Files\Git\usr\bin\openssl"
+
+## Consumer Key     3MVG9eMnfmfDO5NDZEwCCcjcdkSvvcujYxznMyrcV4yAq1kvvMXa50GZQ1Xf5mv5a3yG82DstnMzObtAfrExj
+
+## Login: saravanan.durairaj@crossmark.com.oh.sandev
+
 echo "Generating certificates for use with CircleCI, press enter to continue"
 read check1
-openssl genrsa -des3 -passout pass:password324 -out server.pass.key 2048
-openssl rsa -passin pass:password324 -in server.pass.key -out server.key
+openssl genrsa -des3 -passout pass:mypassword1 -out server.pass.key 2048 algorithm:RS256
+
+openssl rsa -passin pass:mypassword1 -in server.pass.key -out server.key
 rm server.pass.key
 echo "We will now generate the server key, when promoted for a password, press enter"
 echo "press enter to continue"
