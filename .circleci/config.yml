@@ -42,7 +42,7 @@ jobs:
             - node_modules
       - run:
           name: SFDX Scanner Analysis
-          #command: . build/run_sfdx_scanner.sh
+          command: . build/run_sfdx_scanner.sh
       - store_artifacts:
           path: sfdxScannerAnalysis.csv
   deploy-code:
