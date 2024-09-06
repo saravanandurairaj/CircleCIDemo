@@ -1,5 +1,5 @@
 import { LightningElement } from 'lwc';
-import savePerson from '@salesforce/apex/SampleController.savePerson'; // Import Apex method
+import savePerson from '@salesforce/apex/DemoLWCController.savePerson'; // Import Apex method
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
 export default class Demolwc extends LightningElement {
