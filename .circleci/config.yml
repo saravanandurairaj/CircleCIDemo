@@ -1,6 +1,6 @@
 version: 2.1
 jobs:
-  run-tests:
+  pipeline-prep:
     docker:
       - image: circleci/node:latest
     steps:
