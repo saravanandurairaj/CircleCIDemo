@@ -1,6 +1,6 @@
 version: 2.1
 jobs:
-  pipeline-prep:
+  run-tests:
     docker:
       - image: circleci/node:latest
     steps:
@@ -70,6 +70,11 @@ jobs:
       - run:
           name: Deploy to Org
           command: . build/deploy_code.sh
+      - store_artifacts:
+          path: /tmp/art-1
+          destination: artifact-file
+      - store_artifacts:
+          path: /tmp/artifacts
 workflows:
   version: 2
   validate:
