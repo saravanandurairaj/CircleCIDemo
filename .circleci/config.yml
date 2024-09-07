@@ -56,10 +56,7 @@ jobs:
             - dependency-cache-
       - run:
           name: "Creating Dummy Artifacts"
-          command: |
-          echo "my artifact file" > /tmp/art-1;
-          mkdir /tmp/artifacts;
-          echo "my artifact files in a dir" > /tmp/artifacts/art-2;
+          command: . build/create_artifact.sh
       - store_artifacts:
         path: /tmp/art-1
         destination: artifact-file
