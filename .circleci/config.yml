@@ -1,6 +1,6 @@
 version: 2.1
 jobs:
-  run-tests:
+  pipeline-prep:
     docker:
       - image: circleci/node:latest
     steps:
@@ -79,10 +79,10 @@ workflows:
   version: 2
   validate:
     jobs:
-      - run-tests
+      - pipeline-prep
       - code-review:
           requires:
-            - run-tests
+            - pipeline-prep
       - deploy-code:
           requires:
             - code-review
