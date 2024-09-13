@@ -12,6 +12,15 @@ jobs:
             - dependency-cache-{{ checksum "package.json" }}
             - dependency-cache-
       - run:
+          name: Install Salesforce CLI
+          command: |
+            curl -sL https://developer.salesforce.com/media/salesforce-cli/sfcli_linux_x64.tar.xz | tar xJ
+            sudo mv sf /usr/local/bin/
+    - run:
+        name: Set PATH for Salesforce CLI
+        command: |
+          export PATH=$PATH:/usr/local/bin
+      - run:
           name: Install Dependencies
           command: . build/install_dependencies.sh
       - save_cache:
