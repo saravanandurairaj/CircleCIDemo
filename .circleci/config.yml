@@ -1,4 +1,6 @@
 version: 2.1
+env:
+  SFDX_LOG_LEVEL: DEBUG
 jobs:
   run-tests:
     docker:
