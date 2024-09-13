@@ -1,6 +1,8 @@
 echo "Coverting source to metadata format"
 sfdx force:source:convert -d deploy_code -r force-app
 
+set SFDX_LOG_LEVEL=DEBUG
+
 echo "Deploying code to org"
 # sfdx force:mdapi:deploy -u DevHub -d deploy_code/ -w -1 -l RunLocalTests
 
