@@ -22,7 +22,7 @@ sfdx force:source:deploy --sourcepath force-app --targetusername DevHub
 
 # echo "Run All Test Class in org"
 # sfdx force:apex:test:run --testlevel RunLocalTests --outputdir test-results --resultformat tap --targetusername DevHub
-$env:SFDX_LOG_LEVEL="DEBUG"
+set SFDX_LOG_LEVEL=DEBUG
 
 echo "Run Specific Test Class in org"
 sfdx force:apex:test:run -n DemoLWCControllerTest,SampleControllerTest  --testlevel RunSpecifiedTests --outputdir test-results --resultformat tap --targetusername DevHub
